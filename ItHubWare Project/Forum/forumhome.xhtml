@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:icecore ="http://www.icefaces.org/icefaces/core"
+	xmlns:ace ="http://www.icefaces.org/icefaces/components"
+	template="/WEB-INF/templates/BasicTemplate.xhtml">
+	
+	<ui:define name="content">
+		
+	 <div id="forumHomeDiv">
+
+<div id="forumTop">
+
+<h:panelGrid columns="1">
+	<h:form>
+ 			<h:commandLink class="button" value="Post a Question" type="submit"  action="postquestionform"></h:commandLink>
+ 	</h:form>
+ </h:panelGrid>
+
+
+</div>
+
+<div id="recentPostDiv">
+
+
+<ace:dataTable id="forumTable" value=""> <!-- value="#{forumTableInventory.forumData}"
+                                var="item"
+                                lazy="true" -->
+                                  <!--  lazy="true"
+                                  height="300"
+                                  rows="31"
+                                  paginator="true"
+                                  rowIndexVar="row" -->
+                                  
+       <ace:column id="rowNumber" headerText="SlNO">
+       		<h:outputText id="rowNumberCell" value="14324"></h:outputText>
+       </ace:column>
+       
+       <ace:column id="recentPost" headerText="Recent Post">
+       		<h:outputText id="recentPostCell" value="reddy"></h:outputText>
+       </ace:column>
+       
+     
+</ace:dataTable>
+	
+	 
+
+
+  </div>   <!-- div end tag for recentPostDiv-->
+  
+</div>  <!-- div end tag for forumHomeDiv-->
+	</ui:define>
+	
+</ui:composition>

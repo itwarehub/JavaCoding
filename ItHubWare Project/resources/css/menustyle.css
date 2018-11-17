@@ -1,0 +1,87 @@
+.row a {
+			font-family:Arial;
+			color:#FFFFFF;
+			font-weight: bold;
+			font-size:13px;
+			}
+
+			#menu {
+				background: #0d0d0d;
+				list-style: none;
+				margin-top: 30px;
+				padding: 0;
+				overflow: auto;
+				font: bold 13px Arial ;
+				position: fixed;
+				z-index: 1999999999;
+								
+			}
+
+			#menu > li {
+				float: left;
+				margin: 0;
+				padding: 0;
+			}
+
+			#menu a {
+				
+				color: white;
+				display: block;
+				
+			}
+
+			#menu ul {
+				display: none;
+				position: absolute;
+				list-style: none;
+				margin: 2em 0 0;
+				padding: 0;
+				background: green;
+			}
+
+			#menu ul a 
+				{float: none;}
+
+			#menu li:hover 
+				{	color: #ff8c00;}
+
+			#menu li:hover ul 
+				{display: block;}
+				
+				
+			
+.solidblockmenu{
+margin: 0;
+padding: 0;
+float: left;
+font: bold 13px Arial;
+width:100%;
+overflow: hidden;
+margin-bottom: 0em;
+border: 1px solid #625e00;
+border-width: 1px 0;
+background: black url(images/blockdefault.gif) center center repeat-x;
+
+}
+
+.solidblockmenu li{
+display: inline;
+}
+
+.solidblockmenu li a{
+float: left;
+color: white;
+padding: 9px 11px;
+text-decoration: none;
+border-right: 1px solid white;
+}
+
+.solidblockmenu li a:visited{
+color: white;
+}
+
+.solidblockmenu li a:hover, .solidblockmenu li .current{
+color: white;
+background: transparent url(images/blockactive.gif) center center repeat-x;
+}	
+			

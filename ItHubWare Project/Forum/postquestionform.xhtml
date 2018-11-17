@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:icecore ="http://www.icefaces.org/icefaces/core"
+	xmlns:ace ="http://www.icefaces.org/icefaces/components">
+	
+	
+	<h:head>
+	<title>ITHUBWARE/ForumHome</title> 
+<h:outputStylesheet library="css" name="pagestyle.css"></h:outputStylesheet>
+<h:outputStylesheet library="css" name="menustyle.css"></h:outputStylesheet>
+<h:outputStylesheet library="css" name="pagecontentstyles.css"></h:outputStylesheet>
+<h:outputStylesheet library="css" name="buttonstyle.css"></h:outputStylesheet>
+	
+	</h:head>
+<body>
+
+<!-- 
+<div id="header-wrap">
+	<div id="header-container">
+		<div class="header">
+			<ui:insert name="header">
+	      		<ui:include src="/WEB-INF/templates/header.xhtml"></ui:include>
+	         </ui:insert>
+	       
+       </div>end .header
+	</div>
+	
+<ui:include src="/WEB-INF/include/menubar.xhtml"></ui:include>
+
+</div>Header-Wrap -->
+
+<div id="container-wrap">
+	<div id="container">
+		
+    <div id="content">
+
+<div id="leftPostingQuestionForm">
+
+<h:form id="QuestionPostForm">
+
+<h:outputLabel><h3>Post your question in this form.</h3></h:outputLabel>
+
+<h:panelGrid columns="3">
+ 
+ 
+		Related Tag :* <h:selectOneMenu id="selectTag" value="#{forumQuestionBean.questRelatedTag}" immediate="true"  required="true" validatorMessage="Selecting a tag is required">
+							<f:selectItem itemValue="" itemLabel="Select one" noSelectionOption="true"/>
+		                    <f:selectItem itemValue="Core Java" itemLabel="Core Java" />
+                            <f:selectItem itemValue="JSP" itemLabel="JSP" />
+                            <f:selectItem itemValue="Struts" itemLabel="Struts" />
+                            <f:selectItem itemValue="Springs" itemLabel="Springs" />
+                              <f:validateRequired/>  			 			
+		              </h:selectOneMenu>
+		              <h:message for="selectTag" style="color:red" />
+		              
+		Title :*  <h:inputText id="title" value="#{forumQuestionBean.questTitle}" size="50" immediate="true" required="true" requiredMessage="Question title is required">
+		           <f:validateLength minimum="1" maximum="20"></f:validateLength>
+		           </h:inputText>
+ 			                             <h:message for="title" style="color:red" />
+ 			
+ 	    Description :* <h:inputTextarea  id="questDesc" value="#{forumQuestionBean.questDescription}" size="500" rows="10" cols="50" immediate="true" required="true" requiredMessage="Question description is required">
+ 	                   <f:validateLength minimum="1" maximum="30"></f:validateLength>
+ 	                   </h:inputTextarea>
+ 		 		                          <h:message for="questDesc" style="color:red" />
+ 		 			
+ 	     Full Name :*<h:inputText id="fname" value="#{forumQuestionBean.fullName}" immediate="true" required="true" requiredMessage="FullName is required">
+	                <f:validateLength minimum="1" maximum="50"></f:validateLength>
+	                </h:inputText>
+                                           <h:message for="fname" style="color:red"></h:message>
+                                           
+        Email :*<h:inputText id="email" value="#{forumQuestionBean.emailID}" immediate="true" required="true" validatorMessage="Email Id is not valid" requiredMessage="Email is required">
+				<f:validateRegex pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})" />
+                </h:inputText>
+                                            <h:message for="email" style="color:red"></h:message>
+		
+		<!-- <ace:selectMenu id="selectTag">
+		
+		  <f:selectItem itemValue="British Columbia" itemLabel="British Columbia" />
+          <f:selectItem itemValue="Alberta" itemLabel="Alberta" />
+		
+		</ace:selectMenu> -->
+		
+	<!-- 	<h:inputText id="name" value="#{forumBean.fullName}"  size="20" required="true" requiredMessage="Select any tag">
+			<f:validateLength minimum="1" maximum="50"></f:validateLength>
+			</h:inputText>
+ 			<h:message for="name" style="color:red" /> -->
+ 			
+ 	
+ 
+</h:panelGrid>
+
+<h:panelGrid columns="2">
+<h:commandButton class="button" value="Post your Question" type="submit"  action="#{forumQuestionBean.submittingNewQuestion}"></h:commandButton>
+
+<h:commandButton class="button"  value="Reset" type="reset"></h:commandButton>
+ </h:panelGrid>
+ 
+ </h:form>
+
+  </div>  <!-- left posting questions form div -->
+
+   </div> <!-- div id=content -->
+   
+   
+     
+<div id="rightCategoriesList">
+
+
+    	   <table border="0px">
+    	     <tr id="tablerow"><td colspan="2" align="center" height="30px">TECHNOLOGIES</td></tr>
+    	     <tr style="height:10px">
+    	     <td><h:graphicImage value="/images/bullet.gif"></h:graphicImage> </td>
+    	      <td><p>JAVA</p></td>
+    	    </tr>
+    	    	    
+    	  </table>
+  
+</div>   <!-- rightCategoriesList div -->
+
+   
+ 	    
+ 	   <!--   <div id="rightsidebar">
+			  <ui:insert name="rightsidebar">
+	      <ui:include src="/WEB-INF/templates/rightsidebar.xhtml"></ui:include>
+	         </ui:insert>
+	       
+		</div> -->
+           
+  </div><!-- Div Container -->
+</div>  <!-- div id = container-wrap -->
+
+
+    
+
+<div id="footer-wrap">
+	<div id="footer-container">
+		<div id="footer">
+			  <ui:insert name="header">
+	      <ui:include src="/WEB-INF/templates/footer.xhtml"></ui:include>
+	         </ui:insert>
+	       
+		</div>
+	</div>
+</div>
+
+</body>
+
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+  
+  <title>ITHUBWARE/Home</title> 
+  
+<h:outputStylesheet library="css" name="pagestyle.css"></h:outputStylesheet>
+<h:outputStylesheet library="css" name="menustyle.css"></h:outputStylesheet>
+
+<h:outputStylesheet library="css" name="generic.css"></h:outputStylesheet>
+<h:outputStylesheet library="css" name="js-image-slider.css"></h:outputStylesheet>
+<h:outputStylesheet library="css" name="tooltip.css"></h:outputStylesheet>
+
+<h:outputScript name="js/js-image-slider.js"></h:outputScript>
+<h:outputScript name="js/tooltip.js"></h:outputScript>
+
+
+</h:head>
+
+<body>
+
+
+<div id="header-wrap">
+	<div id="header-container">
+		<div class="header">
+
+<div style="width:100%;margin-top:23px;font-size:23px; color:white">
+
+<table>
+	<tr>
+	<td width="150px"></td>
+
+	<td><h:link  outcome="index.html">
+
+<h:graphicImage value="/images/ITlogo3.jpg" alt="It HUB Services"/>
+
+ </h:link></td>
+    <td width="50px"></td>
+    <td width="200px">We are at our best &nbsp;&nbsp;-</td>
+    <td width="300px"><br/><br/>When we are serving others.</td>
+    
+    <td width="100px"></td>
+	<td>EMAIL-US(24*7 Support)<br/>admin@ithubware.com</td>
+	
+	<td></td>
+	<td></td>
+	</tr>
+</table>
+
+
+</div>
+       </div><!-- end .header -->
+	</div>
+	
+	
+			
+		
+ <div id="menunavigation">
+  		<ul class="solidblockmenu" id="menu">
+  			<!-- 	<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+  				<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+  				<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+  				  -->
+  			<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li> 
+  			<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li> 
+  				<li style="width:50px; text-align:center"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+  				
+				<li><h:link value="Home" outcome="index.xhtml"></h:link> </li>
+								
+				<li><h:link value="Online Training" outcome="/ITTraining/ITTraining"></h:link> </li>
+				<li><h:link value="IT Support" outcome="/ITSupport/ITSupport"></h:link> </li>
+				<li><h:link value="Interview Questions" outcome="/InterviewQuestions/questions"></h:link></li>
+				<li><h:link value="Forum" outcome="/Forum/forumhome"></h:link></li>
+				<li><h:link value="IT Projects" outcome="/ITProjects/ITProjects"></h:link></li>
+				
+				  				
+        </ul>
+  </div>
+
+</div>  <!-- Header Wrap -->
+
+
+<div id="container-wrap">
+
+	
+	<div id="container">
+					
+		<div id="sliderFrame" style="margin-top: 50px;">
+    		    <div id="slider">
+		             <a href="" target="_blank">
+		                <h:graphicImage value="/images/servicesimage2.jpg"  alt="#cap1"></h:graphicImage>
+		            </a>
+		            <h:graphicImage value="/images/servicesimage1.jpg" alt="ItHUBWare Services"></h:graphicImage>
+		             <h:graphicImage value="/images/servicesimage2.jpg" alt="Come and Join Us"></h:graphicImage>
+		            <h:graphicImage value="/images/servicesimage1.jpg" alt="#cap2"></h:graphicImage>
+		           </div>
+        
+		        <div style="display: none;">
+		            <div id="cap1">
+		                Welcome to Our ITHUBWare Services
+		            </div>
+		            <div id="cap2">
+		               We provide It Services in all Major areas
+		            </div>
+		        </div>
+        
+        </div><!-- sliderFrame -->
+						
+				
+<div id="content">
+     
+ <div id="text" style="margin-left: 20px;">   	
+<h1>ABOUT ITHUBWARE</h1>	
+
+<p>The main objective of our team is to provide various services to the people who are willing to learn and build an incredible career in "IT INDUSTRY".</p>
+
+<h2>ITTraining: </h2>	
+
+<p>Here, our team expert's provide quality of education in IT training for all the technologies where you want to be a step forward in this IT competitive world. </p>
+
+<h2>Interview Questions:</h2>	
+
+<p>Our team  always work's hard to provide better real time interview questions and answers to them in a simple explanation which can understand to even beginners.   </p>
+
+ </div>
+ 
+ 	    </div> <!-- div id=content -->
+ 	    
+ 	  <div id="rightsidebar">
+			  <ui:insert name="rightsidebar">
+	      <ui:include src="/WEB-INF/templates/rightsidebar.xhtml"></ui:include>
+	         </ui:insert>
+	       
+		</div>
+        
+  </div><!-- Div Container -->
+</div>  <!-- div id = container-wrap -->
+
+<div id="footer-wrap">
+	<div id="footer-container">
+		<div id="footer">
+			  <ui:insert name="header">
+	      <ui:include src="/WEB-INF/templates/footer.xhtml"></ui:include>
+	         </ui:insert>
+	       
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

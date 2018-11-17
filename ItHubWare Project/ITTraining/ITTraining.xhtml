@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+ <title>ITHUBWARE/OnlineTraining</title> 
+<h:outputStylesheet library="css" name="pagestyle.css"></h:outputStylesheet>
+<h:outputStylesheet library="css" name="buttonstyle.css"></h:outputStylesheet>
+<h:outputStylesheet library="css" name="menustyle.css"></h:outputStylesheet>
+<h:outputStylesheet library="css" name="pagecontentstyles.css"></h:outputStylesheet>
+
+<script type="text/javascript">
+ window.onload = function()
+ {
+document.getElementById('ItUserRegForm:fname').focus();
+ }
+ 
+ </script>
+ 
+ <script type="text/javascript">
+ function moveOnMax(field,nextFieldID){
+	  if(field.value.length >= field.maxLength){
+	    document.getElementById("phone2").focus();
+	  }
+	}
+</script>
+
+
+</h:head>
+
+<body>
+
+<div id="header-wrap">
+		<div id="header-container">
+		<div class="header">
+			<ui:insert name="header">
+	      		<ui:include src="/WEB-INF/templates/header.xhtml"></ui:include>
+	         </ui:insert>
+	       
+       </div><!-- end .header -->
+	</div>
+	
+	<ui:include src="/WEB-INF/include/menubar.xhtml"></ui:include>
+</div><!-- Header-Wrap -->
+
+
+<div id="container-wrap">
+	<div id="container">
+		
+    <div id="content">
+
+<div id="leftpanelregform" style="width:700px;float:left">
+
+
+
+<h:form id="ItUserRegForm">
+ 
+  <table class="table_data" border="0" width="700px">
+
+
+<tr bgcolor="#3399cc" style="color:white;height:30px;"><td colspan="4" align="center" >ONLINE TRAINING ENQUIRY FORM</td></tr>
+
+<tr style="height:70px;"><td colspan="4"><b>NOTE:&nbsp;&nbsp;Please fill out the below "ONLINE TRAINING ENQUIRY FORM" so that our team will contact you as soon as possible and will provide you better service.</b></td></tr>
+
+<tr style="height:40px;">
+<td width="100px">&nbsp;</td>
+<td width="200px">First Name:*</td>
+<td  width="200px"><h:inputText id="fname" value="#{itUserData.firstName}" required="true" requiredMessage="FirstName is required">
+	<f:validateLength minimum="1" maximum="50"></f:validateLength> 
+</h:inputText></td>
+<td width="400px"> <h:message for="fname" style="color:red"></h:message> </td>
+</tr>
+
+<tr style="height:40px;">
+<td width="100px"></td>
+<td>Middle Name:</td>
+<td><h:inputText id="mname"  value="#{itUserData.middleName}">
+	
+</h:inputText></td>
+<td> </td>
+</tr>
+
+<tr style="height:40px;">
+<td></td>
+<td>Last Name:*</td>
+<td><h:inputText id="lname" value="#{itUserData.lastName}" required="true" requiredMessage="LastName is required">
+	<f:validateLength minimum="3" maximum="50"></f:validateLength> 
+</h:inputText></td>
+<td> <h:message for="lname" style="color:red"></h:message> </td>
+</tr>
+
+<tr style="height:40px;">
+<td></td>
+<td>Email Address:*</td>
+<td><h:inputText id="email" value="#{itUserData.emailID}" required="true" requiredMessage="Email is required">
+	<f:validateLength minimum="1" maximum="100"></f:validateLength> 
+</h:inputText></td>
+<td> <h:message for="email" style="color:red"></h:message> </td>
+</tr>
+
+<tr style="height:40px;">
+<td></td>
+<td>Telephone:*</td>
+<td>
+<h:inputText id="phone1" value="#{itUserData.phone1}" onkeyup="moveOnMax(this,'phone2')" maxlength="3" size="1" required="true" validatorMessage="(Phone1 should be 3)-" requiredMessage="(Phone1 is required)-" >
+	<f:validateLength minimum="3"></f:validateLength> 
+</h:inputText>-<h:inputText id="phone2"  maxlength="3" size="1" value="#{itUserData.phone2}" required="true" validatorMessage="(Phone2 should be 3)-" requiredMessage="(Phone2 is required)-">
+	<f:validateLength minimum="3"></f:validateLength> 
+</h:inputText>-<h:inputText id="phone3"  maxlength="4" size="1" value="#{itUserData.phone3}" required="true" validatorMessage="(Phone3 should be 4)" requiredMessage="(Phone3 is required)">
+	<f:validateLength minimum="4" ></f:validateLength> 
+</h:inputText></td>
+<td> <h:message for="phone1" style="color:red"></h:message> 
+<h:message for="phone2" style="color:red"></h:message>
+<h:message for="phone3" style="color:red"></h:message></td>
+
+<!--  <input  type="text" maxlength="3" size="1"  name="phone1" />- 
+ <input type="text" maxlength="3" size="1" name="phone2" />-
+ <input type="text" maxlength="4" size="1" name="phone3" />-->
+</tr>
+
+<tr style="height:40px;">
+    <td></td>
+	<td>Address1:* </td>
+	<td><h:inputText id="address1" value="#{itUserData.address1}" required="true" requiredMessage="Address is required">
+	<f:validateLength minimum="1" maximum="100"></f:validateLength> 
+</h:inputText></td>
+<td> <h:message for="address1" style="color:red"></h:message> </td>
+</tr>
+
+<tr style="height:40px;">
+    <td></td>
+	<td>Address2: </td>
+	<td><h:inputText id="address2" value="#{itUserData.address2}" required="false" requiredMessage="USername is req">
+	
+</h:inputText></td>
+<td>  </td>
+</tr>
+
+<tr style="height:100px;">
+<td></td>
+<td>
+<h:commandButton class="button" value="Submit" type="submit"  action="#{itUserData.storeUserData}"></h:commandButton></td>
+
+<td align="center"><h:commandButton class="button"  value="Reset" type="reset"></h:commandButton></td></tr>
+
+</table>
+
+</h:form>
+
+
+</div>
+ 	    </div> <!-- div id=content -->
+ 	    
+ 	     <div id="rightsidebar">
+			  <ui:insert name="rightsidebar">
+	      <ui:include src="/WEB-INF/templates/rightsidebar.xhtml"></ui:include>
+	         </ui:insert>
+	       
+		</div>
+        
+        
+  </div><!-- Div Container -->
+</div>  <!-- div id = container-wrap -->
+
+
+    
+
+<div id="footer-wrap">
+	<div id="footer-container">
+		<div id="footer">
+			  <ui:insert name="header">
+	      <ui:include src="/WEB-INF/templates/footer.xhtml"></ui:include>
+	         </ui:insert>
+	       
+		</div>
+	</div>
+</div>
+	
+<!--  	<script type="text/javascript">
+
+autojump('phone1', 'phone2', 3);
+autojump('phone2', 'phone3', 3);
+autojump('phone3', 'address1', 4);
+
+</script>  -->
+	
+	</body>
+</html>

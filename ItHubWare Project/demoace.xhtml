@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:icecore ="http://www.icefaces.org/icefaces/core"
+	xmlns:ace ="http://www.icefaces.org/icefaces/components">
+	
+	
+	<h:head>
+	<title>ITHUBWARE/ForumHome</title> 
+<h:outputStylesheet library="css" name="pagestyle.css"></h:outputStylesheet>
+<h:outputStylesheet library="css" name="menustyle.css"></h:outputStylesheet>
+<h:outputStylesheet library="css" name="pagecontentstyles.css"></h:outputStylesheet>
+<h:outputStylesheet library="css" name="buttonstyle.css"></h:outputStylesheet>
+	
+	</h:head>
+<body>
+
+<!-- 
+<div id="header-wrap">
+	<div id="header-container">
+		<div class="header">
+			<ui:insert name="header">
+	      		<ui:include src="/WEB-INF/templates/header.xhtml"></ui:include>
+	         </ui:insert>
+	       
+       </div>end .header
+	</div>
+	
+<ui:include src="/WEB-INF/include/menubar.xhtml"></ui:include>
+
+</div>Header-Wrap -->
+
+<div id="container-wrap">
+	<div id="container">
+		
+    <div id="content">
+    
+    <ace:selectMenu id="selectProvince" label="Select province: " labelPosition="top">
+                    <f:selectItem itemValue="British Columbia" itemLabel="British Columbia" />
+                    <f:selectItem itemValue="Alberta" itemLabel="Alberta" />
+                    <f:selectItem itemValue="Saskatchewan" itemLabel="Saskatchewan" />
+                    <f:selectItem itemValue="Manitoba" itemLabel="Manitoba" />
+                 </ace:selectMenu>
+    
+<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Forum pages are still in Construction</h1>
+
+<div id="users_comments">
+
+<div id="left_userinfo">
+
+<h:panelGrid columns="3">
+   			
+ 			Comment : <h:outputText  id="comment" value="#{forumBean.comment}"></h:outputText>
+   
+			Name :<h:outputText id="name" value="#{forumBean.fullName}"></h:outputText>
+ 			 			
+ 			Email :  <h:outputText id="email" value="#{forumBean.emailID}"></h:outputText>
+ 			 
+</h:panelGrid>
+  </div>
+  
+</div>  <!-- div end tag for users_comments -->
+
+
+ <!-- Comment box code below -->
+<div id="comment_form">
+
+<h:form id="commentform">
+<h:outputLabel><h3>Comment below without any registration</h3></h:outputLabel>
+ 
+<h:panelGrid columns="3">
+ 
+ 
+			Name :<h:inputText id="name" value="#{forumBean.fullName}"  size="20" required="true" requiredMessage="Name is required">
+			<f:validateLength minimum="1" maximum="50"></f:validateLength>
+			</h:inputText>
+ 			<h:message for="name" style="color:red" />
+ 			
+ 			Email :  <h:inputText id="email" value="#{forumBean.emailID}" size="20" required="true"></h:inputText>
+ 			<h:message for="email" style="color:red" />
+ 			
+ 			Comment : <h:inputTextarea  id="comment" value="#{forumBean.comment}" size="100" required="true"></h:inputTextarea>
+ 		 			<h:message for="comment" style="color:red" />
+ 
+</h:panelGrid>
+
+
+<h:panelGrid columns="2">
+<h:commandButton class="button" value="Submit" type="submit"  action="#{forumBean.commentFormValues}"></h:commandButton>
+
+<h:commandButton class="button"  value="Reset" type="reset"></h:commandButton>
+ </h:panelGrid>
+	</h:form>
+
+
+
+</div>
+
+
+   </div> <!-- div id=content -->
+ 	    
+ 	   <!--   <div id="rightsidebar">
+			  <ui:insert name="rightsidebar">
+	      <ui:include src="/WEB-INF/templates/rightsidebar.xhtml"></ui:include>
+	         </ui:insert>
+	       
+		</div> -->
+           
+  </div><!-- Div Container -->
+</div>  <!-- div id = container-wrap -->
+
+
+    
+
+<div id="footer-wrap">
+	<div id="footer-container">
+		<div id="footer">
+			  <ui:insert name="header">
+	      <ui:include src="/WEB-INF/templates/footer.xhtml"></ui:include>
+	         </ui:insert>
+	       
+		</div>
+	</div>
+</div>
+
+</body>
+
+
+</html>

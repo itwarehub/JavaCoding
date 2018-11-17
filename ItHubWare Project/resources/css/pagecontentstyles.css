@@ -1,0 +1,82 @@
+
+
+
+#rightCategoriesList {
+	float: right;
+	width: 300px;
+	margin-top: 55px;
+}
+
+#sidebar {
+	float: right;
+	width: 300px;
+	margin-top: 55px;
+	
+}
+
+#leftPostingQuestionForm{
+	width: 700px;
+	margin-left:30px;
+	padding: 10px;
+    border: 2px solid gray;
+	}
+
+#users_comments{
+	margin-left:100px;
+	padding: 10px;
+    border: 3px solid gray;
+    width: 800px;
+	
+}
+
+#left_userinfo{
+	width: 600px;
+	border-right: 3px solid red;
+}
+
+
+#right_desc{
+	
+	width:200px;
+	float:right;
+}
+
+
+#comment_form{
+	margin-left:100px;
+	width: 800px;
+    padding: 10px;
+    border: 3px solid gray;
+    margin-top: 20px;
+}
+
+.table_data{
+	
+	color:black;
+	font-weight:bold;
+}
+
+.table_data b{
+	 color:green;
+	 
+}
+
+
+
+
+.question{
+	padding-left:15px;
+	padding-right:10px;
+	color:red;
+	width: 840px;
+}
+
+.answer{
+	margin-top:-10px;
+	padding-left: 40px;
+	text-align:justify;
+	color:black;
+	width: 840px;
+}
+
+
